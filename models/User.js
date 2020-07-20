@@ -25,7 +25,7 @@ const UserSchema = new mongoose.Schema({
     select: false, // Wont show password when we select user shema
   },
   resetPasswordToken: String,
-  resetPasswordToken: String,
+  resetPasswordExpire: Date,
   createdAt: {
     type: Date,
     default: Date.now,

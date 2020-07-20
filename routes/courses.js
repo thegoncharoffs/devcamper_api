@@ -1,4 +1,8 @@
 const express = require('express');
+const { protect, authorize } = require('../middlewares/auth');
+
+const Course = require('../models/Course');
+const advancedResults = require('../middlewares/advancedResults');
 const {
   getCourses,
   getCourse,
@@ -6,10 +10,6 @@ const {
   updateCourse,
   deleteCourse,
 } = require('../controllers/courses');
-const { protect, authorize } = require('../middlewares/auth');
-
-const Course = require('../models/Course');
-const advancedResults = require('../middlewares/advancedResults');
 
 const router = express.Router({ mergeParams: true }); // merge params need for rerouting
 
